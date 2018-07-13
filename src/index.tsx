@@ -4,9 +4,10 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux';
 import { enthusiasm } from './reducer'
 import { IStoreState } from './types'
-import Hello from './containers/Hello';
+import App from './containers';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter } from 'react-router-dom';
 const store = createStore<IStoreState, any, any, any>(enthusiasm, {
   enthusiasmLevel: 1,
   languageName: 'TypeScript',
@@ -14,7 +15,9 @@ const store = createStore<IStoreState, any, any, any>(enthusiasm, {
 
 ReactDOM.render(
   <Provider store={store}>
-    <Hello />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root') as HTMLElement
 );
