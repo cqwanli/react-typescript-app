@@ -1,7 +1,7 @@
 import Hello from './containers/Hello'
 const routes = [
   {
-    path: '/hello',
+    path: '/',
     component: Hello
   }
 ];
